@@ -1,0 +1,11 @@
+{
+  "version": "0.2.0",
+  "configurations": [{
+    "name": "Run BigO Inspector Extension",
+    "type": "extensionHost",
+    "request": "launch",
+    "preLaunchTask": "BigO Inspector: compile",
+    "args": ["--extensionDevelopmentPath=${workspaceFolder}", "${workspaceFolder}/sample"],
+    "outFiles": ["${workspaceFolder}/dist/**/*.js"]
+  }]
+}

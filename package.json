@@ -1,0 +1,31 @@
+{
+  "name": "bigo-inspector",
+  "displayName": "BigO Inspector",
+  "description": "A small Clang-AST based Big-O estimator for C++ workspaces.",
+  "version": "0.1.0",
+  "publisher": "student-lab",
+  "license": "MIT",
+  "engines": { "vscode": "^1.85.0" },
+  "categories": ["Programming Languages", "Visualization"],
+  "activationEvents": ["onCommand:bigoInspector.analyzeProject"],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [{ "command": "bigoInspector.analyzeProject", "title": "BigO Inspector: Analyze C++ Project" }],
+    "configuration": { "title": "BigO Inspector", "properties": {
+      "bigoInspector.clangPath": { "type": "string", "default": "clang++", "description": "Path to clang++ executable." },
+      "bigoInspector.standard": { "type": "string", "default": "c++17", "description": "C++ standard passed to Clang when no compile_commands.json exists." }
+    }}
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch --preserveWatchOutput",
+    "test": "tsc && node test/analysis.test.cjs",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.3.3",
+    "@vscode/vsce": "^2.24.0"
+  }
+}

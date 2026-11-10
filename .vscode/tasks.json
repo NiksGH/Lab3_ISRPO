@@ -1,0 +1,14 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "process",
+      "command": "node",
+      "args": ["${workspaceFolder}/node_modules/typescript/bin/tsc"],
+      "problemMatcher": ["$tsc"],
+      "label": "BigO Inspector: compile",
+      "options": { "cwd": "${workspaceFolder}" },
+      "detail": "Compile the extension before launching the Extension Development Host."
+    }
+  ]
+}
